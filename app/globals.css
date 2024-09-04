@@ -1,0 +1,22 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.border-gradient {
+  border-width: 2px;
+  border-style: solid;
+  border-image-source: linear-gradient(90deg, #6a5acd, #48d1cc);
+  border-image-slice: 1;
+}
+
+@keyframes infinite-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+.animate-infinite-scroll {
+  animation: infinite-scroll 20s linear infinite;
+}
