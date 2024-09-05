@@ -1,21 +1,20 @@
-import React from 'react'
-import { motion } from 'framer-motion';
+import React, { useRef } from 'react'
+import { motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 
 const TeamCard = ({ member, index }) => {
-    
+
     const cardVariants = {
-        offscreen: {
+        initial: {
             opacity: 0,
             y: 100,
         },
-        onscreen: {
+        animate: {
             opacity: 1,
             y: 0,
-            transition: {
-                type: 'spring',
-                bounce: 0.4,
-                duration: 0.8,
+            transition: {              
+                bounce: 0.3,
+                duration: member.duration,
             },
         },
     };
@@ -24,13 +23,13 @@ const TeamCard = ({ member, index }) => {
         <motion.div
             key={index}
             variants={cardVariants}
-            initial="offscreen"
-            whileInView="onscreen"
-            viewport={{ once: false, amount: 0.8 }}
-            transition={{ duration: 0.5, delay: index * 0.2 }}
-            className="xl:w-1/5 sm:w-1/2 md:w-1/3 p-2"
+            initial="initial"
+            whileInView="animate"
+            viewport={{ once: false }}
+            transition={{ delay: index * 0.2 }}
+            className="xl:w-1/5 sm:w-1/2 md:w-1/3 p-2 mb-6 md:mb-0"
         >
-            <div className="rounded mt-16 shadow-md bg-white">
+            <div className="rounded mt-16 shadow-md bg-white"  >
                 <div className="relative">
                     <div className="h-32 w-32 absolute -top-16 left-1/2 transform -translate-x-1/2">
                         <Image

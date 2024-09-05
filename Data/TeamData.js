@@ -14,7 +14,8 @@ export const teamMembers = [
             linkedin: 'https://www.linkedin.com/in/luqman-insight-81897b24a/',
             facebook: 'https://facebook.com',
             instagram: 'https://instagram.com'
-        }
+        },
+        duration : 0.3
     },
     {
         name: 'M Shehzad',
@@ -25,7 +26,8 @@ export const teamMembers = [
             linkedin: 'https://linkedin.com',
             facebook: 'https://facebook.com',
             instagram: 'https://instagram.com'
-        }
+        },
+        duration : 0.5
     },
     {
         name: 'Seema Batool',
@@ -36,7 +38,8 @@ export const teamMembers = [
             linkedin: 'https://linkedin.com',
             facebook: 'https://facebook.com',
             instagram: 'https://instagram.com'
-        }
+        },
+        duration : 0.7
     },
     {
         name: 'Abdullah Khan',
@@ -47,7 +50,8 @@ export const teamMembers = [
             linkedin: 'https://linkedin.com',
             github: 'https://github.com',
             facebook: 'https://facebook.com'
-        }
+        },
+        duration : 0.9
     },
     {
         name: 'Aleeza Rubab',
@@ -58,7 +62,8 @@ export const teamMembers = [
             linkedin: 'https://www.linkedin.com/in/aleezarubab/',
             github: 'https://github.com/aleeza23',
             facebook: 'https://web.facebook.com/people/Aleeza-Rubab/pfbid0oX24vS64Zc1TsCvbg4yTQ6LDL2Au9Q9BJckXq3VS4rQHMLicpJGtvRrTix67cGMkl/'
-        }
+        },
+        duration : 1.1
     }
 ];
 

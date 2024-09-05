@@ -1,7 +1,7 @@
 "use client";
 import React from 'react';
 import Link from 'next/link';
-import { motion } from 'framer-motion';
+import { delay, motion } from 'framer-motion';
 import HeroText from './HeroText';
 
 const HeroSection = () => {
@@ -17,30 +17,29 @@ const HeroSection = () => {
       y: 0,
       scale: 1,
       transition: {
-        type: 'spring',
         bounce: 0.4,
-        duration: 0.8,
+        duration: 0.3,
       },
     },
   };
 
   // Variants for Button
   const buttonVariants = {
-    hidden: {
-      opacity: 0,
-      scale: 0.9,
+    offscreen: {
+        opacity: 0,
+        scale: 0.8, 
     },
-    visible: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        type: 'spring',
-        bounce: 0.4,
-        duration: 0.8,
-        delay: 0.4,
-      },
+    onscreen: {
+        opacity: 1,
+        scale: 1, 
+        transition: {
+            type: 'spring',
+            delay : 0.3,
+            bounce: 0.4,
+            duration: 0.9,
+        },
     },
-  };
+};
 
   return (
     <div className="flex justify-center items-center dark:bg-slate-800">
@@ -52,19 +51,19 @@ const HeroSection = () => {
           variants={heroTextVariants}
           className="text-center"
         >
-        {/* Hero text */}
-        <HeroText />
-        
+          {/* Hero text */}
+          <HeroText />
+
           <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: false, amount: 0.2 }} 
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: false, amount: 0.03 }}
             variants={buttonVariants}
-            className="mt-5 sm:mt-8 sm:flex sm:justify-center"
+            className="mt-12 sm:mt-12 sm:flex sm:justify-center"
           >
             <div className="rounded-md shadow">
               <Link
-                href="#"
+                href="#contact"
                 className="flex items-center justify-center rounded-md border border-transparent bg-blue-600 px-8 py-3 text-base font-medium text-white hover:bg-blue-700 md:py-4 md:px-10 md:text-lg"
               >
                 Get started 🚀
