@@ -1,10 +1,19 @@
-import ContactUs from "@/components/ContactUs";
-import Footer from "@/components/Footer";
-import Header from "@/components/Header";
-import Hero from "@/components/Hero";
-import Projects from "@/components/Projects";
-import Services from "@/components/Services";
-import Teams from "@/components/Teams";
+import dynamic from 'next/dynamic';
+
+// Critical components for initial load
+import Header from '@/components/Header';
+import Hero from '@/components/Hero';
+
+// Dynamically imported components
+const Projects = dynamic(() => import('@/components/Projects'));
+const Services = dynamic(() => import('@/components/Services'));
+const Tech = dynamic(() => import('@/components/Tech'));
+const DigitalMarketing = dynamic(() => import('@/components/DigitalMarketing'));
+const Teams = dynamic(() => import('@/components/Teams'));
+const Testimonials = dynamic(() => import('@/components/Testimonials'));
+const Blogs = dynamic(() => import('@/components/Blogs'));
+const ContactUs = dynamic(() => import('@/components/ContactUs'));
+const Footer = dynamic(() => import('@/components/Footer'));
 
 export default function Home() {
   return (
@@ -14,8 +23,12 @@ export default function Home() {
         <Hero />
       </div>
       <Services />
+      <Tech />
       <Projects />
+      <DigitalMarketing />
       <Teams />
+      <Testimonials />
+      <Blogs />
       <ContactUs />
       <Footer />
     </>

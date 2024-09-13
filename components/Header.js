@@ -1,20 +1,60 @@
+// components/Header.js
 "use client";
 import React, { useState } from 'react';
 import Link from 'next/link';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
-import logo from '@/public/logo.2eb85d29b6c42e62c4ad.webp'
+import dynamic from 'next/dynamic';
+import logo from '@/public/logo.2eb85d29b6c42e62c4ad.webp';
+import Domain from './Domain';
+import Hoisting from './Hoisting';
+
+// Dynamically import the Courses, MobileMenu, and Modal components
+const Courses = dynamic(() => import('./Courses'), {
+  ssr: false,
+});
+
+const MobileMenu = dynamic(() => import('./MobileMenu'), {
+  ssr: false,
+});
+
+const Modal = dynamic(() => import('./Modal'), {
+  ssr: false,
+});
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const [modalContent, setModalContent] = useState(null);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleLinkClick = (id) => {
+    toggleMenu();
+    setTimeout(() => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
+    }, 300);
+  };
+
+  const handleOpenModal = (content) => {
+    setModalContent(content);
+    setShowModal(true);
+    toggleMenu();
+  };
+
+  const handleCloseModal = () => {
+    setShowModal(false);
+    setModalContent(null);
+  };
+
   return (
     <>
-      <header className="relative  bg-v flex justify-between items-center px-6 bg-transparent z-20 w-full">
+      <header className="relative bg-v flex justify-between items-center px-6 bg-transparent z-20 w-full">
         {/* Logo */}
         <div className="text-2xl font-bold">
           <Link href="/">
@@ -24,46 +64,68 @@ const Header = () => {
               className="h-12 w-auto"
               width={100}
               height={100}
+              loading="lazy"
             />
           </Link>
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex flex-grow justify-center items-center">
-          <div className="rounded-full  border-2 border-gradient mt-1 p-1 px-7">
-            <ul className="flex space-x-8 text-lg ">
+        <nav className="hidden md:flex flex-grow justify-center items-center" aria-label="Main navigation">
+          <div className="rounded-full border-2 border-gradient mt-1 p-1 px-7">
+            <ul className="flex space-x-8 text-lg">
               <li>
                 <Link href="#home" className="hover:text-blue-500 transition">
                   Home
                 </Link>
               </li>
               <li>
+                <button
+                  onClick={() => handleOpenModal(<Hoisting />)}
+                  className="hover:text-blue-500 transition"
+                >
+                  Hosting
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => handleOpenModal(<Domain />)}
+                  className="hover:text-blue-500 transition"
+                >
+                  Domain
+                </button>
+              </li>
+              <li>
+                <button
+                  onClick={() => handleOpenModal(<Courses />)}
+                  className="hover:text-blue-500 transition"
+                >
+                  Courses
+                </button>
+              </li>
+              <li>
                 <Link href="#services" className="hover:text-blue-500 transition">
                   Services
                 </Link>
-              </li>             
+              </li>
               <li>
                 <Link href="#projects" className="hover:text-blue-500 transition">
                   Projects
                 </Link>
               </li>
+             
               <li>
-                <Link href="#about" className="hover:text-blue-500 transition">
-                  About
+                <Link href="#blogs" className="hover:text-blue-500 transition">
+                  Blogs
                 </Link>
               </li>
-              <li>
-                <Link href="#contact" className="hover:text-blue-500 transition">
-                  Contact
-                </Link>
-              </li>
+            
             </ul>
           </div>
         </nav>
 
         {/* Let's Connect Button for Desktop */}
         <div className="hidden md:block">
-          <Link href="#contact" className="px-6 py-2  bg-gradient-to-r from-purple-400 to-blue-500 text-white rounded-full hover:shadow-lg transition">
+          <Link href="#contact" className="px-6 py-2 bg-gradient-to-r from-purple-400 to-blue-500 text-white rounded-full hover:shadow-lg transition">
             Lets Connect
           </Link>
         </div>
@@ -87,51 +149,17 @@ const Header = () => {
         </div>
 
         {/* Mobile Menu */}
-        <motion.nav
-          initial={{ height: 0, opacity: 0 }}
-          animate={{ height: isOpen ? '100vh' : 0, opacity: isOpen ? 1 : 0 }}
-          transition={{ duration: 0.5 }}
-          className="overflow-hidden bg-white md:hidden fixed top-0 left-0 w-full"
-        >
-          <div className="flex justify-end p-4">
-            <button onClick={toggleMenu} className="text-gray-800 text-4xl">
-              &times;
-            </button>
-          </div>
-          <ul className="flex flex-col items-center space-y-6 mt-20">
-            <li>
-              <Link href="#home" className="text-lg font-medium text-gray-800 hover:text-blue-500 transition">
-                Home
-              </Link>
-            </li>
-            <li>
-              <Link href="#services" className="text-lg font-medium text-gray-800 hover:text-blue-500 transition">
-                Services
-              </Link>
-            </li>            
-            <li>
-              <Link href="#projects" className="text-lg font-medium text-gray-800 hover:text-blue-500 transition">
-                Projects
-              </Link>
-            </li>
-            <li>
-                <Link href="#about" className="hover:text-blue-500 transition">
-                  About
-                </Link>
-              </li>
-            <li>
-                <Link href="#about" className="hover:text-blue-500 transition">
-                  Contact
-                </Link>
-              </li>
-            <li>
-              <Link href="#contact" className="px-6 py-2 bg-gradient-to-r from-purple-400 to-blue-500 text-white rounded-full hover:shadow-lg transition">
-                Lets Connect
-              </Link>
-            </li>
-          </ul>
-        </motion.nav>
+        {isOpen && (
+          <MobileMenu onOpenModal={handleOpenModal} isOpen={isOpen} toggleMenu={toggleMenu} handleLinkClick={handleLinkClick} />
+        )}
       </header>
+
+      {/* Modal */}
+      {showModal && (
+        <Modal show={showModal} onClose={handleCloseModal}>
+          {modalContent}
+        </Modal>
+      )}
     </>
   );
 };

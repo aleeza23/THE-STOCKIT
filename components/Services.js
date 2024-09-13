@@ -5,14 +5,11 @@ import { ServicesData } from "@/Data/ServicesData";
 import ServicesCard from "./ServicesCard";
 
 const Services = () => {
+
     return (
-        <motion.section
+        <section
             id="services"
-            className="relative block px-6 py-10 md:py-20 md:px-10"
-            initial={{ opacity: 0, y: 50 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5 }}
-            viewport={{ once: true, amount: 0.2 }}
+            className="relative mt-32 md:mt-0 block px-6 py-10 md:py-20 md:px-10"
         >
             <div className="relative mx-auto max-w-5xl text-center">
                 <span className="text-black my-3 flex items-center justify-center font-medium uppercase tracking-wider">
@@ -26,12 +23,15 @@ const Services = () => {
                 </p>
             </div>
 
-            <div className="relative mx-auto max-w-5xl z-10 grid grid-cols-1 gap-10 pt-14 sm:grid-cols-2 lg:grid-cols-3">
+            <motion.div initial={{ opacity: 0, y: 50 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+                viewport={{ once: true, amount: 0.2 }} className="relative mx-auto max-w-5xl z-10 grid grid-cols-1 gap-10 pt-14 sm:grid-cols-2 lg:grid-cols-3">
                 {ServicesData.map((elm, i) => (
                     <ServicesCard key={i} elm={elm} index={i} />
                 ))}
-            </div>
-        </motion.section>
+            </motion.div>
+        </section>
     );
 };
 

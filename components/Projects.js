@@ -1,24 +1,12 @@
-"use client";
-import { useEffect, useRef } from "react";
-import { images } from "@/Data/ProjectData";
-import ProjectCard from "./ProjectCard";
+import Image from 'next/image';
+import { images } from '@/Data/ProjectData';
+import ProjectCard from './ProjectCard';
+import Slider from '@/constant/Slider';
 
 const Projects = () => {
-
-
-    const logosRef = useRef(null);
-
-    useEffect(() => {
-        const ul = logosRef.current;
-        if (ul) {
-            ul.insertAdjacentHTML('afterend', ul.outerHTML);
-            ul.nextSibling.setAttribute('aria-hidden', 'true');
-        }
-    }, []);
-
     return (
-        <div className="relative font-inter antialiased" id="projects">
-            <div className="relative mx-auto max-w-5xl mb-12 text-center">              
+        <div id='projects'>
+            <div className="relative px-6 mt-10 mb-10 md:mt-0  mx-auto max-w-5xl text-center">
                 <h2 className="block w-full text-black font-bold text-3xl sm:text-4xl">
                     Discover Our Impactful Work
                 </h2>
@@ -26,27 +14,19 @@ const Projects = () => {
                     At The Stockit, we take pride in our diverse portfolio of projects that demonstrate our commitment to delivering exceptional digital solutions.
                 </p>
             </div>
+            <Slider>
+                {/* Map over images array to create slides */}
+                {images.map((image, index) => (
+                    <ProjectCard image={image} index={index} key={index} />
+                ))}
+                {/* Duplicate slides for infinite effect */}
+                {images.map((image, index) => (
+                    <ProjectCard image={image} index={index} key={index} />
 
-            <main className="relative flex flex-col justify-center overflow-hidden">
-                <div className="w-full mx-auto px-4 md:px-6 ">
-                    <div className="text-center">
-
-                        {/* Logo Carousel animation */}
-                        <div
-                            className="w-full inline-flex flex-nowrap overflow-hidden"
-                        >
-                            <ul ref={logosRef} className="flex items-center justify-center gap-4 [&_img]:max-w-none animate-infinite-scroll">
-                                {images.map((image, index) => (
-                                    <ProjectCard key={index} index={index} image={image} />
-                                ))}
-                            </ul>
-                        </div>
-
-                    </div>
-                </div>
-            </main>
+                ))}
+            </Slider>
         </div>
-    );
-};
+    )
+}
 
 export default Projects;

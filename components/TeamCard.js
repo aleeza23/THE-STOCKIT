@@ -27,9 +27,10 @@ const TeamCard = ({ member, index }) => {
             whileInView="animate"
             viewport={{ once: false }}
             transition={{ delay: index * 0.2 }}
-            className="xl:w-1/5 sm:w-1/2 md:w-1/3 p-2 mb-6 md:mb-0"
+            className="xl:w-1/5 sm:w-1/2 md:w-1/3 p-2 mb-6 md:mb-7 "
         >
-            <div className="rounded mt-16 shadow-md bg-white"  >
+            <div className="rounded mt-16 shadow-md px-4  bg-white"  >
+            <div className="lg:min-h-[300px] ">
                 <div className="relative">
                     <div className="h-32 w-32 absolute -top-16 left-1/2 transform -translate-x-1/2">
                         <Image
@@ -37,16 +38,17 @@ const TeamCard = ({ member, index }) => {
                             alt={`Display Picture of ${member.name}`}
                             fill
                             className="rounded-full object-cover h-full w-full shadow-md"
+                            loading='lazy'
                         />
                     </div>
                 </div>
-                <div className="px-6 pt-16 pb-5">
+                <div className="px-[0.40rem] pt-16 pb-5  ">
                     <h1 className="font-bold text-2xl text-center mt-2 mb-1">{member.name}</h1>
                     <p className="text-gray-800 text-sm text-center">{member.role}</p>
                     <p className="text-center text-gray-600 text-base pt-3 font-normal">
                         {member.description}
                     </p>
-                    <div className="w-full flex items-center gap-3 justify-center pt-5">
+                    <div className="w-full flex items-center gap-3  justify-center  pt-5">
                         {member.socialLinks.github && (
                             <a href={member.socialLinks.github} >
                                 <div aria-label="Github" role="img">
@@ -119,6 +121,7 @@ const TeamCard = ({ member, index }) => {
                             </a>
                         )}
                     </div>
+                </div>
                 </div>
             </div>
         </motion.div>

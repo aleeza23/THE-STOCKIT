@@ -9,13 +9,16 @@ export const metadata = {
   keywords: "digital agency, web development, SEO, digital marketing, video editing",
   author: "The Stockit",
   robots: "index, follow",
+  icons : {
+    icon : ['/favicon.ico?v=4'],
+    apple : ['/apple-touch-icon.png?=v4'],
+  },
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
-        <link rel="icon" href="https://thestockit.online/favicon.ico" type="image/x-icon" />
         <meta name="description" content={metadata.description} />
         <meta name="keywords" content={metadata.keywords} />
         <meta name="author" content={metadata.author} />
@@ -24,6 +27,8 @@ export default function RootLayout({ children }) {
         <meta property="og:description" content={metadata.description} />
         <meta name="twitter:title" content={metadata.title} />
         <meta name="twitter:description" content={metadata.description} />
+        <link href="https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/keen-slider.min.css" rel="stylesheet" />
+
       </head>
       <body className={inter.className}>{children}</body>
     </html>

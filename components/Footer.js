@@ -4,7 +4,7 @@ import logo from '@/public/logo.2eb85d29b6c42e62c4ad.webp'
 
 const Footer = () => {
     return (
-        <div className="relative bg-gradient-to-r from-indigo-400 to-pink-600 overflow-hidden">          
+        <div className="relative bg-gradient-to-r from-indigo-400 to-pink-600 overflow-hidden">
             <div className="absolute inset-0 overflow-hidden">
                 <svg
                     className="absolute top-0 left-0 w-full h-full pointer-events-none"
@@ -29,6 +29,7 @@ const Footer = () => {
                                     className="h-12 w-auto"
                                     width={100}
                                     height={100}
+                                    loading='lazy'
                                 />
                             </Link>
                         </div>
@@ -202,8 +203,9 @@ const Footer = () => {
                 </div>
                 <div className="flex flex-col justify-between pt-5 pb-10 border-t border-deep-purple-accent-200 sm:flex-row">
                     <p className="text-sm text-gray-100">
-                        © Copyright 2020 Lorem Inc. All rights reserved.
+                        © Copyright 2024 The Stockit. All rights reserved.
                     </p>
+
                     <div className="flex items-center mt-4 space-x-4 sm:mt-0">
                         <a
                             href="/"

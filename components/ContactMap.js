@@ -8,7 +8,7 @@ const ContactMap = () => {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, }}
-            viewport={{ once: false, amount: 0.4 }}
+            viewport={{ once: false, amount: 0.2 }}
         >
             <iframe
                 width="100%"
@@ -19,13 +19,13 @@ const ContactMap = () => {
                 marginHeight="0"
                 marginWidth="0"
                 scrolling="no"
-                src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=10%20Haslingden%20Drive%2C%20BD95HR%2C%20West%20Yorkshire%2C%20UK&ie=UTF8&t=&z=14&iwloc=B&output=embed"
+                src="https://maps.google.com/maps?width=100%&height=600&hl=en&q=Asian%20Business%20Center,%20First%20Floor,%20Bahria%20Town%20Phase%207,%20Rawalpindi&ie=UTF8&t=&z=14&iwloc=B&output=embed"
                 style={{ filter: 'grayscale(1) contrast(1.2) opacity(0.4)' }}
             ></iframe>
             <div className="bg-white relative flex flex-wrap py-6 rounded shadow-md">
                 <div className="lg:w-1/2 px-6">
                     <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs">ADDRESS</h2>
-                    <p className="mt-1">10 Haslingden Drive, BD95HR, West Yorkshire, UK</p>
+                    <p className="mt-1">Asian Business Center, First Floor, Bahria Town Phase 7, Rawalpindi</p>
                 </div>
                 <div className="lg:w-1/2 px-6 mt-4 lg:mt-0">
                     <h2 className="title-font font-semibold text-gray-900 tracking-widest text-xs">EMAIL</h2>
