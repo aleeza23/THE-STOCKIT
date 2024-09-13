@@ -9,10 +9,11 @@ const CoursePolicy = dynamic(() => import('@/components/CoursePolicy'), { ssr: f
 const CoursesCard = dynamic(() => import('@/components/CoursesCard'), { ssr: false });
 const CoursesDetails = dynamic(() => import('@/components/CoursesDetails'), { ssr: false });
 
+
 export default function CoursesPage() {
     return (
         <>
-            <div className="bg-gray-100 pt-10 pb-16">
+            <div className="bg-gray-100 pt-0 lg:pt-10 pb-16">
                 <Header />
                 <CoursePolicy />
             </div>

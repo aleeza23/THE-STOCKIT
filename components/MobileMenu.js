@@ -21,12 +21,9 @@ const MobileMenu = ({ isOpen, toggleMenu, handleLinkClick, onOpenModal }) => (
         </div>
         <ul className="flex flex-col items-center space-y-6 mt-20">
             <li>
-                <button
-                    onClick={() => handleLinkClick("home")}
-                    className="text-lg font-medium text-gray-800 hover:text-blue-500 transition"
-                >
+                <Link href="/" className="text-lg font-medium text-gray-800 hover:text-blue-500 transition">
                     Home
-                </button>
+                </Link>
             </li>
             <li>
                 <button
@@ -44,7 +41,7 @@ const MobileMenu = ({ isOpen, toggleMenu, handleLinkClick, onOpenModal }) => (
                     Projects
                 </button>
             </li>
-           
+
             <li>
                 <button
                     onClick={() => handleLinkClick('blogs')}
@@ -53,7 +50,7 @@ const MobileMenu = ({ isOpen, toggleMenu, handleLinkClick, onOpenModal }) => (
                     Blogs
                 </button>
             </li>
-         
+
             <li>
                 <button
                     onClick={() => onOpenModal(<Hosting />)}
@@ -72,9 +69,9 @@ const MobileMenu = ({ isOpen, toggleMenu, handleLinkClick, onOpenModal }) => (
             </li>
             <li>
                 <Link href="/courses" className="text-lg font-medium text-gray-800 hover:text-blue-500 transition">
-                  Courses
+                    Courses
                 </Link>
-              </li>
+            </li>
             <li>
                 <button
                     onClick={() => handleLinkClick('contact')}
