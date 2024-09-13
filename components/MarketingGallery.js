@@ -25,8 +25,8 @@ const MarketingGallery = () => {
           transition={{ duration: 0.4 }}
         >
           <Link href={'https://www.facebook.com/share/V1iw7PPGaX8GjPDD/?mibextid=qi2Omg'} className='shadow-lg w-full h-full bg-gray-100'>
-          <div className="bg-gray-100">
-            <Image width={20} height={20} className="object-contain w-48 h-64 mx-auto" loading='lazy' src={img01} alt="gallery-image" />
+            <div className="bg-gray-100">
+              <Image width={700} height={800} className="object-contain w-48 h-64 mx-auto" loading='lazy' src={img01} alt="gallery-image" />
             </div>
           </Link>
         </motion.div>

@@ -44,6 +44,35 @@ const Footer = () => {
                     </div>
                     <div className="grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4">
                         <div>
+                            <p className="font-semibold tracking-wide text-white">
+                                Useful Links
+                            </p>
+                            <ul className="mt-2 space-y-2">
+                                <li>
+                                    <a href="#" className="transition-colors cursor-pointer duration-300 text-white hover:text-teal-accent-400">
+                                        Home
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#contact" className="transition-colors cursor-pointer duration-300 text-white hover:text-teal-accent-400">
+                                        Contact us
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#about" className="transition-colors cursor-pointer duration-300 text-white hover:text-teal-accent-400">
+                                        About us
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#blogs" className="transition-colors cursor-pointer duration-300 text-white hover:text-teal-accent-400">
+                                        Blogs
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+
+
+                        <div>
                             <p className="font-semibold tracking-wide text-white ">
                                 Services
                             </p>
@@ -82,123 +111,25 @@ const Footer = () => {
                                 </li>
                             </ul>
                         </div>
-                        <div>
+
+
+                        <div className="col-span-2">
                             <p className="font-semibold tracking-wide text-white">
-                                Solutions
+                                Contact Us
                             </p>
                             <ul className="mt-2 space-y-2">
-                                <li>
-                                    <a
-                                        href="/"
-                                        className="transition-colors duration-300 text-white hover:text-teal-accent-400"
-                                    >
-                                        E-commerce Solutions
-                                    </a>
+                                <li className="transition-colors duration-300 text-white">
+                                    10 Haslingden Drive, BD95HR, West Yorkshire, UK
                                 </li>
-                                <li>
-                                    <a
-                                        href="/"
-                                        className="transition-colors duration-300 text-white hover:text-teal-accent-400"
-                                    >
-                                        Business Solutions
-                                    </a>
+                                <li className="transition-colors duration-300 text-white">
+                                    info@stockit.net
                                 </li>
-                                <li>
-                                    <a
-                                        href="/"
-                                        className="transition-colors duration-300 text-white hover:text-teal-accent-400"
-                                    >
-                                        Entertainment Solutions
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="/"
-                                        className="transition-colors duration-300 text-white hover:text-teal-accent-400"
-                                    >
-                                        Portfolio Solutions
-                                    </a>
+                                <li className="transition-colors duration-300 text-white">
+                                    +44 7360 506217
                                 </li>
                             </ul>
                         </div>
-                        <div>
-                            <p className="font-semibold tracking-wide text-white">
-                                Services
-                            </p>
-                            <ul className="mt-2 space-y-2">
-                                <li>
-                                    <a
-                                        href="/"
-                                        className="transition-colors duration-300 text-white hover:text-teal-accent-400"
-                                    >
-                                        Web Development
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="/"
-                                        className="transition-colors duration-300 text-white hover:text-teal-accent-400"
-                                    >
-                                        SEO Optimization
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="/"
-                                        className="transition-colors duration-300 text-white hover:text-teal-accent-400"
-                                    >
-                                        Digital Marketing
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="/"
-                                        className="transition-colors duration-300 text-white hover:text-teal-accent-400"
-                                    >
-                                        Video Editing
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div>
-                            <p className="font-semibold tracking-wide text-white">
-                                Solutions
-                            </p>
-                            <ul className="mt-2 space-y-2">
-                                <li>
-                                    <a
-                                        href="/"
-                                        className="transition-colors duration-300 text-white hover:text-teal-accent-400"
-                                    >
-                                        E-commerce Solutions
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="/"
-                                        className="transition-colors duration-300 text-white hover:text-teal-accent-400"
-                                    >
-                                        Business Solutions
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="/"
-                                        className="transition-colors duration-300 text-white hover:text-teal-accent-400"
-                                    >
-                                        Entertainment Solutions
-                                    </a>
-                                </li>
-                                <li>
-                                    <a
-                                        href="/"
-                                        className="transition-colors duration-300 text-white hover:text-teal-accent-400"
-                                    >
-                                        Portfolio Solutions
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
+
                     </div>
                 </div>
                 <div className="flex flex-col justify-between pt-5 pb-10 border-t border-deep-purple-accent-200 sm:flex-row">

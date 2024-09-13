@@ -9,11 +9,6 @@ import logo from '@/public/logo.2eb85d29b6c42e62c4ad.webp';
 import Domain from './Domain';
 import Hoisting from './Hoisting';
 
-// Dynamically import the Courses, MobileMenu, and Modal components
-const Courses = dynamic(() => import('./Courses'), {
-  ssr: false,
-});
-
 const MobileMenu = dynamic(() => import('./MobileMenu'), {
   ssr: false,
 });
@@ -74,7 +69,7 @@ const Header = () => {
           <div className="rounded-full border-2 border-gradient mt-1 p-1 px-7">
             <ul className="flex space-x-8 text-lg">
               <li>
-                <Link href="#home" className="hover:text-blue-500 transition">
+                <Link href="/" className="hover:text-blue-500 transition">
                   Home
                 </Link>
               </li>
@@ -95,12 +90,9 @@ const Header = () => {
                 </button>
               </li>
               <li>
-                <button
-                  onClick={() => handleOpenModal(<Courses />)}
-                  className="hover:text-blue-500 transition"
-                >
+                <Link href="/courses" className="hover:text-blue-500 transition">
                   Courses
-                </button>
+                </Link>
               </li>
               <li>
                 <Link href="#services" className="hover:text-blue-500 transition">

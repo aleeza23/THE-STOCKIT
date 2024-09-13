@@ -4,7 +4,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import Hosting from './Hoisting';
 import Domain from './Domain';
-import Courses from './Courses';
+import Link from 'next/link';
 
 const MobileMenu = ({ isOpen, toggleMenu, handleLinkClick, onOpenModal }) => (
     <motion.nav
@@ -71,13 +71,10 @@ const MobileMenu = ({ isOpen, toggleMenu, handleLinkClick, onOpenModal }) => (
                 </button>
             </li>
             <li>
-                <button
-                    onClick={() => onOpenModal(<Courses />)}
-                    className="text-lg font-medium text-gray-800 hover:text-blue-500 transition"
-                >
-                    Courses
-                </button>
-            </li>
+                <Link href="/courses" className="text-lg font-medium text-gray-800 hover:text-blue-500 transition">
+                  Courses
+                </Link>
+              </li>
             <li>
                 <button
                     onClick={() => handleLinkClick('contact')}
