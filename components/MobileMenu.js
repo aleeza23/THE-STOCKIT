@@ -2,8 +2,7 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
-import Hosting from './Hoisting';
-import Domain from './Domain';
+
 import Link from 'next/link';
 
 const MobileMenu = ({ isOpen, toggleMenu, handleLinkClick, onOpenModal }) => (
@@ -51,7 +50,7 @@ const MobileMenu = ({ isOpen, toggleMenu, handleLinkClick, onOpenModal }) => (
                 </button>
             </li>
 
-            <li>
+            {/* <li>
                 <button
                     onClick={() => onOpenModal(<Hosting />)}
                     className="text-lg font-medium text-gray-800 hover:text-blue-500 transition"
@@ -66,6 +65,16 @@ const MobileMenu = ({ isOpen, toggleMenu, handleLinkClick, onOpenModal }) => (
                 >
                     Domain
                 </button>
+            </li> */}
+              <li>
+                <Link href="https://thestockit.net/top-4-web-hostings-for-new-publishers-in-2024/" className="text-lg font-medium text-gray-800 hover:text-blue-500 transition">
+                   Web Hosting
+                </Link>
+            </li>
+            <li>
+                <Link href="https://thestockit.net/domains/" className="text-lg font-medium text-gray-800 hover:text-blue-500 transition">
+                    Domains
+                </Link>
             </li>
             <li>
                 <Link href="/courses" className="text-lg font-medium text-gray-800 hover:text-blue-500 transition">

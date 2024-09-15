@@ -6,8 +6,7 @@ import { motion } from 'framer-motion';
 import Image from 'next/image';
 import dynamic from 'next/dynamic';
 import logo from '@/public/logo.2eb85d29b6c42e62c4ad.webp';
-import Domain from './Domain';
-import Hoisting from './Hoisting';
+
 
 const MobileMenu = dynamic(() => import('./MobileMenu'), {
   ssr: false,
@@ -74,6 +73,16 @@ const Header = () => {
                 </Link>
               </li>
               <li>
+                <Link target="_blank" href="https://thestockit.net/top-4-web-hostings-for-new-publishers-in-2024/" className="hover:text-blue-500 transition">
+                  Web Hosting
+                </Link>
+              </li>
+              <li>
+                <Link target="_blank" href="https://thestockit.net/domains/" className="hover:text-blue-500 transition">
+                  Domains
+                </Link>
+              </li>
+              {/* <li>
                 <button
                   onClick={() => handleOpenModal(<Hoisting />)}
                   className="hover:text-blue-500 transition"
@@ -88,7 +97,7 @@ const Header = () => {
                 >
                   Domain
                 </button>
-              </li>
+              </li> */}
               <li>
                 <Link href="/courses" className="hover:text-blue-500 transition">
                   Courses
