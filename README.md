@@ -32,7 +32,7 @@ To explore the project:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/the-stockit.git
+   git clone https://github.com/aleeza23/THE-STOCKIT.git
 
 First, run the development server:
 
