@@ -17,11 +17,11 @@ The Stockit is designed to provide potential clients with an engaging experience
 - 📱 **Responsive Design**: Optimized for all devices, ensuring a seamless experience on desktops, tablets, and mobile phones.
 
 
-![Home Page](path/to/home-page-image.png)
+![Home Page](demo-images/1st.PNG)
 
-![Services Section](path/to/services-image.png)
+![Services Section](demo-images/2nd.PNG)
 
-![Contact Us](path/to/contact-us-image.png)
+![Contact Us](demo-images/3rd.PNG)
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
